@@ -165,3 +165,63 @@ class NewtonLayout(BoxLayout):
                 size_hint_y=None,
                 height=25
             ))
+
+ # --- Proses utama perhitungan Newton-Raphson ---
+    def hitung(self, instance):
+        try:
+            expr_str = self.fx_input.text
+            x = symbols('x')
+            expr = sympify(expr_str)
+            expr_diff = diff(expr, x)
+            f = lambdify(x, expr, 'math')
+            f_prim = lambdify(x, expr_diff, 'math')
+
+            x0 = float(self.x0_input.text)
+            e = float(self.e_input.text)
+            n = int(self.n_input.text)
+        except Exception as ex:
+            self.clear_table()
+            self.add_row([f"Input tidak valid: {ex}"], color=(1, 0, 0))
+            return
+
+        self.clear_table()
+        self.add_header()
+
+        for i in range(1, n + 1):
+            fx = f(x0)
+            fpx = f_prim(x0)
+
+            if fpx == 0:
+                self.add_row([f"Turunan nol di iterasi {i}"], color=(1, 0, 0))
+                break
+
+            x1 = x0 - (fx / fpx)
+            selisih = abs(x1 - x0)
+
+            self.add_row([
+                i,
+                f"{x0:.6f}",
+                f"{fx:.6f}",
+                f"{fpx:.6f}",
+                f"{selisih:.6f}"
+            ])
+
+            if selisih < e:
+                self.add_row([" Akar:", f"x = {x1:.6f}", f"({i} iterasi)"], color=(1, 0, 0))
+                break
+
+            x0 = x1
+        else:
+            self.add_row([" Tidak konvergen", f"x terakhir = {x1:.6f}"], color=(0, 0, 0))
+
+
+# --- Jalankan aplikasi ---
+class NewtonCal(App):
+    def build(self):
+        self.title = 'UTS Komnum - Newton-Raphson (Dinamis & Otomatis)'
+        return NewtonLayout()
+
+
+if __name__ == '__main__':
+    NewtonCal().run()
+
