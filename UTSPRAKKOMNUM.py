@@ -13,7 +13,6 @@ from kivy.graphics import Color, Rectangle
 # --- Warna dasar aplikasi ---
 Window.clearcolor = (1, 0.694, 1)  # pink pastel background
 
-
 # --- Label dengan kotak warna (agar mirip input box) ---
 class BoxLabel(Label):
     def __init__(self, **kwargs):
