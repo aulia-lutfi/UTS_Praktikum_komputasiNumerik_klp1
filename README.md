@@ -133,6 +133,12 @@ DIBUAT UNTUK:
 
 DIBUAT OLEH:
    [Kelompok 1]
+Nama Anggota :
+Abdi Dzil Ikram (2408107010024)
+Aulia Lutfi (2408107010033)
+Annisa Rahma Fathia (2408107010027)
+Dara Ramadhani (2408107010028)
+Putroe Fatimah Azzahra (2408107010002)
    
 
 ==========================================================
