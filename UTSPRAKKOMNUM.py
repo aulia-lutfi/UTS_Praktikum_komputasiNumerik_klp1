@@ -89,3 +89,38 @@ class NewtonLayout(BoxLayout):
         )
         input_layout.add_widget(self.e_input)
 
+# Input jumlah iterasi maksimum n
+        input_layout.add_widget(Label(text="n (maks iterasi):", color=(0, 0, 0), font_size=16, halign="right"))
+        self.n_input = TextInput(
+            text='',
+            multiline=False,
+            size_hint_y=None,
+            height=30,
+            background_color=(0.949, 0.494, 0.820, 1),
+            foreground_color=(0, 0, 0)
+        )
+        input_layout.add_widget(self.n_input)
+
+        self.add_widget(input_layout)
+
+        # --- Bind agar turunan langsung muncul saat persamaan diubah ---
+        self.fx_input.bind(text=self.update_derivative)
+
+        # --- Tombol hitung ---
+        self.calc_button = Button(
+            text="🔹 Hitung Akar (Newton-Raphson)",
+            size_hint=(1, 0.1),
+            background_color=(0.949, 0.494, 0.820, 1),
+            color=(1, 1, 1),
+            font_size=16
+        )
+        self.calc_button.bind(on_press=self.hitung)
+        self.add_widget(self.calc_button)
+
+        # --- Area hasil (tabel dalam ScrollView) ---
+        self.result_layout = GridLayout(cols=5, spacing=4, size_hint_y=None)
+        self.result_layout.bind(minimum_height=self.result_layout.setter('height'))
+
+        scroll = ScrollView(size_hint=(1, 0.5))
+        scroll.add_widget(self.result_layout)
+        self.add_widget(scroll)
