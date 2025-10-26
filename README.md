@@ -1,5 +1,5 @@
 ## APLIKASI NEWTON-RAPHSON (METODE NUMERIK) ##
- ** Dibuat dengan Python & Kivy GUI **
+Dibuat dengan Python & Kivy GUI
 
 
 # 1. DESKRIPSI PROGRAM
@@ -127,6 +127,7 @@ e. Fungsi hitung()
 
 # DIBUAT UNTUK: 
    Tugas UTS Praktikum Komputasi Numerik
+   
    Topik: Metode Newton-Raphson (Versi Dinamis & Otomatis)
 
 # DIBUAT OLEH:
