@@ -44,7 +44,7 @@ class NewtonLayout(BoxLayout):
 
         # Input persamaan f(x)
         input_layout.add_widget(Label(text="Persamaan f(x):", color=(0, 0, 0), font_size=16, halign="right"))
-                self.fx_input = TextInput(
+        self.fx_input = TextInput(
             text='',
             multiline=False,
             size_hint_y=None,
@@ -89,7 +89,7 @@ class NewtonLayout(BoxLayout):
         )
         input_layout.add_widget(self.e_input)
 
-# Input jumlah iterasi maksimum n
+        # Input jumlah iterasi maksimum n
         input_layout.add_widget(Label(text="n (maks iterasi):", color=(0, 0, 0), font_size=16, halign="right"))
         self.n_input = TextInput(
             text='',
@@ -124,3 +124,44 @@ class NewtonLayout(BoxLayout):
         scroll = ScrollView(size_hint=(1, 0.5))
         scroll.add_widget(self.result_layout)
         self.add_widget(scroll)
+        
+     # --- Fungsi untuk memperbarui turunan otomatis ---
+    def update_derivative(self, instance, value):
+        x = symbols('x')
+        value = value.strip()
+        
+        if not value:  # kosong
+            self.fpx_label.text = "(persamaan belum diinput)"
+            return
+        
+        try:
+            expr = sympify(value)
+            expr_diff = diff(expr, x)
+            self.fpx_label.text = str(expr_diff)
+        except Exception:
+            self.fpx_label.text = "(persamaan tidak valid)"
+
+    # --- Fungsi bantu untuk tabel hasil ---
+    def clear_table(self):
+        self.result_layout.clear_widgets()
+
+    def add_header(self):
+        headers = ["Iterasi", "xi", "f(xi)", "f'(xi)", "|xi+1-xi|"]
+        for h in headers:
+            self.result_layout.add_widget(Label(
+                text=f"[b]{h}[/b]",
+                markup=True,
+                color=(0, 0, 0),
+                size_hint_y=None,
+                height=30
+            ))
+
+    def add_row(self, data, color=(0, 0, 0)):
+        for val in data:
+            self.result_layout.add_widget(Label(
+                text=str(val),
+                color=color,
+                font_size=14,
+                size_hint_y=None,
+                height=25
+            ))
