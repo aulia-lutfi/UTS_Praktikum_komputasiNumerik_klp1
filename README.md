@@ -121,9 +121,10 @@ Dibuat dengan Python & Kivy GUI
    
    Topik: Metode Newton-Raphson (Versi Dinamis & Otomatis)
 
+
 # DIBUAT OLEH:
    [Kelompok 1]
-   
+ 
 Nama Anggota :
 - Abdi Dzil Ikram (2408107010024)
 - Aulia Lutfi (2408107010033)
