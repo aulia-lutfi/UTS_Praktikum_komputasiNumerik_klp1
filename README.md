@@ -1,8 +1,9 @@
-** APLIKASI NEWTON-RAPHSON (METODE NUMERIK)
- Dibuat dengan Python & Kivy GUI**
+## APLIKASI NEWTON-RAPHSON (METODE NUMERIK) ##
+ ** Dibuat dengan Python & Kivy GUI **
 
 
-1. DESKRIPSI PROGRAM
+# 1. DESKRIPSI PROGRAM
+   
 Program ini adalah aplikasi berbasis GUI (Graphical User Interface) 
 yang digunakan untuk mencari akar suatu persamaan non-linear 
 menggunakan Metode Newton-Raphson.
@@ -21,7 +22,8 @@ matematika f(x), dan program akan:
   atau jika turunan bernilai nol
 
 
-2. PENJELASAN METODE NEWTON-RAPHSON
+# 2. PENJELASAN METODE NEWTON-RAPHSON
+
 Metode Newton-Raphson adalah salah satu metode numerik untuk mencari 
 akar (root) dari sebuah persamaan non-linear f(x) = 0.
 
@@ -49,7 +51,8 @@ akar sebenarnya, namun bisa gagal jika:
     - Nilai awal terlalu jauh dari akar sebenarnya
 
 
-3. FITUR UTAMA PROGRAM
+# 3. FITUR UTAMA PROGRAM
+
 1. Input f(x)
    Pengguna bebas mengetik bentuk fungsi, misalnya:  x**3 - 4*x + 1
 
@@ -81,7 +84,8 @@ akar sebenarnya, namun bisa gagal jika:
    Tampilan lembut dan menarik dengan kombinasi warna pink & ungu pastel.
 
 
-4. PENJELASAN STRUKTUR KODE
+# 4. PENJELASAN STRUKTUR KODE
+
 a. Bagian Import Library
    Program menggunakan:
    - kivy.app, kivy.uix.*    → untuk antarmuka (tombol, input, layout)
@@ -112,18 +116,20 @@ e. Fungsi hitung()
    - Menampilkan hasil di tabel
 
 
-5. KELEBIHAN PROGRAM
+# 5. KELEBIHAN PROGRAM
+
 - Antarmuka sederhana dan interaktif
 - Turunan otomatis tanpa perlu input manual
 - Hasil langsung tampil dalam bentuk tabel
 - Warna lembut (pink & ungu pastel) yang nyaman dilihat
 - Cocok untuk pembelajaran atau demonstrasi metode numerik di kelas
 
-DIBUAT UNTUK: 
+
+# DIBUAT UNTUK: 
    Tugas UTS Praktikum Komputasi Numerik
    Topik: Metode Newton-Raphson (Versi Dinamis & Otomatis)
 
-DIBUAT OLEH:
+# DIBUAT OLEH:
    [Kelompok 1]
 Nama Anggota :
 - Abdi Dzil Ikram (2408107010024)
