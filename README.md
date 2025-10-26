@@ -130,4 +130,3 @@ Nama Anggota :
 - Annisa Rahma Fathia (2408107010027)
 - Dara Ramadhani (2408107010028)
 - Putroe Fatimah Azzahra (2408107010002)
-- 
