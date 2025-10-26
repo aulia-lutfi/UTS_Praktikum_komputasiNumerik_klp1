@@ -75,15 +75,18 @@ Dibuat dengan Python & Kivy GUI
 # 4. PENJELASAN STRUKTUR KODE
 
    a. Bagian Import Library
+   
       Program menggunakan:
       - kivy.app, kivy.uix.*    → untuk antarmuka (tombol, input, layout)
       - sympy                   → untuk menghitung turunan & evaluasi fungsi
       - Window.clearcolor       → untuk memberi warna dasar aplikasi
 
    b. Kelas BoxLabel
+   
       Kelas khusus yang membuat label dengan kotak berwarna, agar tampilannya seragam dengan input box.
 
    c. Kelas NewtonLayout
+   
       Kelas utama yang mengatur seluruh tata letak (layout) aplikasi:
       - Bagian input persamaan dan parameter
       - Label turunan otomatis
@@ -91,9 +94,11 @@ Dibuat dengan Python & Kivy GUI
       - Area hasil (tabel iterasi)
 
    d. Fungsi update_derivative()
+   
       Berfungsi menampilkan hasil turunan f'(x) secara otomatis setiap kali pengguna mengetik di kolom f(x).
 
    e. Fungsi hitung()
+   
       Menjalankan langkah-langkah utama metode Newton-Raphson:
       - Membaca input
       - Mengubah fungsi ke bentuk matematis
