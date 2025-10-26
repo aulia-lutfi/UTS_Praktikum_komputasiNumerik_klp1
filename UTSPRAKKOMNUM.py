@@ -214,13 +214,11 @@ class NewtonLayout(BoxLayout):
         else:
             self.add_row([" Tidak konvergen", f"x terakhir = {x1:.6f}"], color=(0, 0, 0))
 
-
 # --- Jalankan aplikasi ---
 class NewtonCal(App):
     def build(self):
         self.title = 'UTS Komnum - Newton-Raphson (Dinamis & Otomatis)'
         return NewtonLayout()
-
 
 if __name__ == '__main__':
     NewtonCal().run()
